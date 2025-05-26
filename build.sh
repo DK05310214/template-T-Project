@@ -3,15 +3,6 @@
 export CC=clang
 export CXX=clang++
 
-# build.sh - 增强版 CMake 构建脚本
-# 用法: ./build.sh [选项] [-- <cmake-args>...]
-# 新增特性: 直接通过 --debug/--release 设置构建类型
-# 示例: 
-#   ./build.sh --debug
-#   ./build.sh --release -G Ninja
-#   ./build.sh --target test -- -DCMAKE_INSTALL_PREFIX=/opt
-
-# 初始化变量
 build_dir="build"
 install_dir="install"
 job_num=16
@@ -20,7 +11,7 @@ cmake_args=()
 build_args=()
 clean=false
 show_help=false
-build_type="debug"  # 新增构建类型变量
+build_type="debug"
 
 # 参数解析逻辑
 while [[ $# -gt 0 ]]; do
@@ -82,10 +73,3 @@ echo "cmake ./src ./build -DCMAKE_BUILD_TYPE=${build_type}"
 
 cmake --build . -j${job_num}
 cmake --install . --prefix=../${install_dir}
-
-
-
-# 最终检查
-if [[ $? -ne 0 ]]; then
-    exit 1
-fi
