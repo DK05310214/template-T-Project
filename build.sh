@@ -12,6 +12,7 @@ build_args=()
 clean=false
 show_help=false
 build_type="debug"
+cmake_toolchain_file="~/local/vcpkg/scripts/buildsystems/vcpkg.cmake"
 
 # 参数解析逻辑
 while [[ $# -gt 0 ]]; do
@@ -67,7 +68,7 @@ if [[ -n "$build_type" ]]; then
     echo "build type: $build_type"
 fi
 
-cmake ../src . -DCMAKE_BUILD_TYPE=${build_type}
+cmake ../src . -DCMAKE_BUILD_TYPE=${build_type} -DCMAKE_TOOLCHAIN_FILE=${cmake_toolchain_file}
 
 echo "cmake ./src ./build -DCMAKE_BUILD_TYPE=${build_type}"
 
