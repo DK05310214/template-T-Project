@@ -68,9 +68,9 @@ if [[ -n "$build_type" ]]; then
     echo "build type: $build_type"
 fi
 
-cmake ../src . -DCMAKE_BUILD_TYPE=${build_type} -DCMAKE_TOOLCHAIN_FILE=${cmake_toolchain_file}
+cmake .. . -DCMAKE_BUILD_TYPE=${build_type} -DCMAKE_TOOLCHAIN_FILE=${cmake_toolchain_file}
 
-echo "cmake ./src ./build -DCMAKE_BUILD_TYPE=${build_type}"
+echo "cmake .. . -DCMAKE_BUILD_TYPE=${build_type}"
 
 cmake --build . -j${job_num}
 cmake --install . --prefix=../${install_dir}
