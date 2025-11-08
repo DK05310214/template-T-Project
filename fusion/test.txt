@@ -1,0 +1,35 @@
+dre:
+- inputCrop:    1x2x5x3x4x4
+- perm:         2 4 3 5 0 1
+- InShapeMap:
+    - 0: 0,1
+    - 1: 2,3
+    - 2: 4,5
+
+- outputCrop:   5x4x3x4x1x2
+- perm:         4 5 0 2 1 3
+- OutshapeMap:
+    - 0: 0,1
+    - 1: 2,3
+    - 2: 4
+    - 3: 5
+
+vec: 
+- input1:
+
+oriShape = T1 * curShape
+
+8x3x1
+
+8x3x1x1
+- 0: 0
+- 1: 1,2
+- 2: 3
+
+2x4x3x1
+
+res:
+2x4x3x1x1
+- 0: 0,1
+- 1: 2,3
+- 2: 4
