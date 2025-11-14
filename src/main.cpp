@@ -1,6 +1,5 @@
 #include <iostream>
 #include "spdlog/spdlog.h"
-// #include <Eigen/Eigen>
 #include <Eigen/Eigen>
 
 int main(int, char**){

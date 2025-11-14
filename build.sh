@@ -68,7 +68,7 @@ if [[ -n "$build_type" ]]; then
     echo "build type: $build_type"
 fi
 
-cmake .. . -DCMAKE_BUILD_TYPE=${build_type} -DCMAKE_TOOLCHAIN_FILE=${cmake_toolchain_file}
+cmake .. . -DCMAKE_BUILD_TYPE=${build_type} -DCMAKE_TOOLCHAIN_FILE=${cmake_toolchain_file} -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 
 echo "cmake .. . -DCMAKE_BUILD_TYPE=${build_type}"
 
